@@ -6,7 +6,7 @@ authors = ["Vfrid <113192881+Vfrid@users.noreply.github.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = <empty>
+python = "^3.8"
 django = "^4.2.4"
 dj-database-url = "^2.0.0"
 psycopg2-binary = "^2.9.6"
