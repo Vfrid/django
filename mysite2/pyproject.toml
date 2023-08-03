@@ -1,12 +1,12 @@
 [tool.poetry]
-name = "mysite"
+name = "mysite2"
 version = "0.1.0"
 description = ""
-authors = ["Your Name <you@example.com>"]
+authors = ["Vfrid <113192881+Vfrid@users.noreply.github.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.11"
 django = "^4.2.4"
 
 
