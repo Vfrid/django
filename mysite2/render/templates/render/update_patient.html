@@ -1,0 +1,29 @@
+{% extends 'render/base.html' %}
+{% block content %}
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'render/style.css' %}">
+<br></br>
+
+<h1>Update Patient</h1>
+<h2>{{ patient }}</h2>
+<br></br>
+<form action="" method="POST"class="update_patient-container">
+    {% csrf_token %}
+    <div class="update_patient-box">
+      {{ form.as_p }}
+    </div>
+    <br></br>
+    <input type="submit" class="btn"value="Update">
+</form>
+
+<!-- <div class="error_mess">
+    {% if messages %}
+      {% for message in messages %}
+        {{ message }}
+      {% endfor %}
+    {% endif %}
+  </div> -->
+  
+{% endblock %}

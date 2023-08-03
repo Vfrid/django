@@ -1,0 +1,24 @@
+{% extends 'render/base.html' %}
+{% block content %}
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'render/style.css' %}">
+
+<h1 class="h1-center">Add New Patient</h1>
+
+
+{% if submitted %}
+
+        Your new patient was created succesfully!
+
+        {% else %}
+            <form action="" method="POST" class="add_patient-container"> {% csrf_token %}
+                <div class="add_patient-box">
+                    {{ form.as_p }}
+                </div>
+
+                <input type="submit" value="Submit" class="btn">
+            </form>
+            {% endif %}
+{% endblock %}

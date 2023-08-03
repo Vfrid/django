@@ -1,0 +1,51 @@
+{% extends 'render/base.html' %}
+{% block content %}
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'render/style.css' %}">
+
+<h1 class="strong">Patient List</h1>
+<h2>Click To Update Information</h2>
+<br></br>
+    {% for patient in patients %}
+<div class="card-container">
+    <div class="ag-format-container">
+        <div class="ag-courses_box">
+          <div class="ag-courses_item">
+            <a href="{% url 'update_patient' patient.id %}" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                <strong>{{patient}} </strong>
+                <div class="ag-courses-item_date">
+                    <li>Room Number: {{patient.room_number}}</li>
+                    <li>Age: {{patient.age}}</li>
+                    <li>Sex: {{patient.sex}}</li>
+                    <li>Doctor: {{patient.doctor}}</li>
+                    <li>Reason Admitted: {{patient.reason_adm}}</li>
+                    <li>Notes: {{patient.notes}}</li>
+                    <li>Date Admitted: {{patient.pub_date}}</li>
+                    <li>Body Temperature: {{patient.body_temp}}</li>
+                    <li>Pulse Rate: {{patient.pulse_rate}}</li>
+                    <li>Respiration Rate: {{patient.respiration_rate}}</li>
+                    <li>Blood Pressure (Systolic): {{patient.systolic}}</li>
+                    <li>Blood Pressure (Diastolic): {{patient.diastolic}}</li>
+                    <br>
+                    <div class="vital_stat">
+                      <li>Temperature Evaluation: {{patient.temp_eval}}</li>
+                      <li>Pulse Evaluation: {{ patient.pulse_eval }}</li>
+                      <li>Respiration Evaluation: {{ patient.resp_eval }}</li>
+                      <li>Systolic Evaluation: {{ patient.systolic_eval }}</li>
+                      <li>Diastolic Evaluation: {{ patient.diastolic_eval }}</li>
+                    </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+{% endblock %}

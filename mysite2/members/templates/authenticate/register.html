@@ -1,0 +1,21 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'members/style.css' %}">
+
+
+<h1>Register New Doctor</h1>
+
+<form action="{% url 'register' %}" method="POST">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <a  class ="link"href="login_user">Already have an account? Log in</a> <br></br>
+    
+    <button type="submit" class="btn">Submit</button>
+    
+</form>
+
+{% if form.errors %}
+<p class="red">There was an error with your form... maybe... fix that...</p>
+{% endif %}

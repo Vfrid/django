@@ -1,0 +1,109 @@
+{% extends 'render/base.html' %}
+{% block content %}
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'render/style.css' %}">
+<br></br>
+<h1 class="strong">Welcome to Vital Check!</h1>
+<br></br>
+<h2>Free tool for students and doctors to check patients' vital signs.</h2>
+<br>
+<div class="heart-rate-container">
+  <div class="heart-rate">
+    <svg version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="150px" height="73px" viewBox="0 0 150 73" enable-background="new 0 0 150 73" xml:space="preserve">
+      <polyline fill="none" stroke="#ce3636" stroke-width="3" stroke-miterlimit="10" points="0,45.486 38.514,45.486 44.595,33.324 50.676,45.486 57.771,45.486 62.838,55.622 71.959,9 80.067,63.729 84.122,45.486 97.297,45.486 103.379,40.419 110.473,45.486 150,45.486"
+      />
+    </svg>
+    <div class="fade-in"></div>
+    <div class="fade-out"></div>
+  </div>
+</div>
+
+<br>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <td></td>
+        <td class="vital">Pulse</td>
+        <td class="vital">Respirations</td>
+        <td class="vital">Temperature (F)</td>
+        <td class="vital">BP - Systolic</td>
+        <td class="vital">BP - Diastolic</td>
+      </tr>
+    </thead>
+    <tr class="darker-stripe">
+      <td class="age">Infant</td>
+      <td>80 - 160</td>
+      <td>30 - 60</td>
+      <td>99.4 - 99.7</td>
+      <td>74 - 100</td>
+      <td>50 - 70</td>
+    </tr>
+    <tr>
+      <td class="age">Toddler</td>
+      <td>80 - 130</td>
+      <td>24 - 40</td>
+      <td>99.0 - 99.7</td>
+      <td>80 - 112</td>
+      <td>50 - 80</td>
+    </tr>
+    <tr class="darker-stripe">
+      <td class="age">Preschooler</td>
+      <td>80 - 120</td>
+      <td>22 - 34</td>
+      <td>98.6 - 99.0</td>
+      <td>82 - 110</td>
+      <td>50 - 78</td>
+    </tr>
+    <tr>
+      <td class="age">School-Age</td>
+      <td>75 - 110</td>
+      <td>18 - 30</td>
+      <td>98.0 - 98.6</td>
+      <td>84 - 120</td>
+      <td>54 - 80</td>
+    </tr>
+    <tr class="darker-stripe">
+      <td class="age">Adolescent</td>
+      <td>60 - 90</td>
+      <td>12 - 20</td>
+      <td>97.0 - 99.0</td>
+      <td>94 - 120</td>
+      <td>62 - 80</td>
+    </tr>
+    <tr>
+      <td class="age">Adult</td>
+      <td>60 - 100</td>
+      <td>12 - 20</td>
+      <td>97.0 - 99.0</td>
+      <td>90 - 120</td>
+      <td>60 - 80</td>
+    </tr>
+    <tr class="darker-stripe">
+      <td class="age">Older Adult</td>
+      <td>60 - 100</td>
+      <td>12 - 20</td>
+      <td>95.0 - 99.0</td>
+      <td>90 - 120</td>
+      <td>60 - 80</td>
+    </tr>
+  </table>
+</div>
+<div class="error_mess">
+  <div class="error_indent">
+    {% if messages %}
+      {% for message in messages %}
+        {{ message }}
+      {% endfor %}
+    {% endif %}
+  </div>
+  </div>
+<section>
+  <div class='air air1'></div>
+  <div class='air air2'></div>
+  <div class='air air3'></div>
+  <div class='air air4'></div>
+</section>
+{% endblock %}
